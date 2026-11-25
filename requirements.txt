@@ -1,0 +1,5 @@
+# API (o que vai na imagem do Cloud Run). Sem torch: a inferencia e em numpy.
+fastapi
+uvicorn[standard]
+numpy
+python-dotenv

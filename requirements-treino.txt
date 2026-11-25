@@ -1,0 +1,6 @@
+# Treino e backfill (rodam na maquina de voces, nao no Cloud Run)
+-r requirements.txt
+torch
+pandas
+scikit-learn
+psycopg[binary]

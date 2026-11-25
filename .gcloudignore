@@ -1,0 +1,22 @@
+# O que NAO sobe no gcloud app deploy. O App Engine so precisa da API:
+# app.yaml, env.yaml, requirements.txt, artefatos/ e src/{api,config,inferencia,texto}.py
+# Confira com: gcloud meta list-files-for-upload
+.gcloudignore
+.git/
+.github/
+.gitignore
+.env
+.env.example
+env.example.yaml
+.venv/
+__pycache__/
+**/__pycache__/
+*.docx
+README.md
+
+# Parte local: treino e manutencao
+dados/
+requirements-treino.txt
+src/treino.py
+src/modelo.py
+src/backfill.py

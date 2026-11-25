@@ -1,0 +1,18 @@
+# App Engine standard. Deploy: gcloud app deploy (nesta pasta)
+runtime: python312
+service: default
+
+# F1 = a menor instancia (384 MB), entra na cota gratuita. A inferencia e numpy, cabe com folga.
+instance_class: F1
+
+entrypoint: uvicorn api:app --app-dir src --host 0.0.0.0 --port $PORT
+
+automatic_scaling:
+  min_instances: 0   # desliga quando ninguem usa: custo zero parado
+  max_instances: 2   # teto de gasto
+  min_idle_instances: 0
+
+# API_KEY (e LIMIAR, se quiser) ficam no env.yaml, que nao vai pro git.
+# Copie env.example.yaml para env.yaml e preencha.
+includes:
+  - env.yaml
